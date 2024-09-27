@@ -1,7 +1,7 @@
 # This workflow will build and push a Python application to an Azure Web App when a commit is pushed to your default branch.
 #
 # This workflow assumes you have already created the target Azure App Service web app.
-# For instructions see https://docs.microsoft.com/en-us/azure/app-service/quickstart-python?tabs=bash&pivots=python-framework-flask
+# For instructions see: https://docs.microsoft.com/en-us/azure/app-service/quickstart-python?tabs=bash&pivots=python-framework-flask
 #
 # To configure this workflow:
 #
@@ -84,3 +84,6 @@ jobs:
         with:
           app-name: ${{ env.AZURE_WEBAPP_NAME }}
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+
+      - name: Display Web App URL
+        run: echo "Deployed to: https://${{ env.AZURE_WEBAPP_NAME }}.azurewebsites.net"
